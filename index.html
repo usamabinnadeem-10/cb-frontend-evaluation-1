@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="index.js" defer></script>
+    <title>Frontend Evaluation Level 1</title>
+  </head>
+  <body>
+    <header class="flex-row">
+      <h4><span>Rest</span>aurant</h4>
+      <div class="avatar-block flex-row">
+        <figure>
+          <i class="material-icons avatar-block__icon">notifications</i>
+        </figure>
+        <div class="avatar-block__user-info flex-row">
+          <h5 class="avatar-block__user-name">Adam Lane</h5>
+          <!-- <figure class="avatar-block__avatar"></figure> -->
+        </div>
+      </div>
+    </header>
+    <main class="flex-row">
+      <!-- CATEGORIES -->
+      <aside class="categories-container flex-col">
+        <div class="categories-container__heading flex-row category">
+          <h4 class="fw-400">Categories</h4>
+          <h4 id="category-count" class="fw-400"></h4>
+        </div>
+        <div
+          class="flex-col categories-container__dynamic"
+          id="category-map"
+        ></div>
+      </aside>
+      <!-- MENU -->
+      <section class="menu-container-parent">
+        <input class="search fw-400" placeholder="Search Item" />
+        <div class="menu-container flex-row" id="menu"></div>
+      </section>
+      <!-- CART -->
+      <section>
+        <!-- CART HEADER -->
+        <div class="cart-header flex-row">
+          <div class="flex-row cart-header__round-container">
+            <h5 class="fw-400">Cart Items</h5>
+            <div>
+              <h5
+                id="cart-header__round__count"
+                class="fw-400 cart-header__round-container__text flex-row"
+              >
+                0
+              </h5>
+            </div>
+          </div>
+          <div class="flex-row cart-header__round-container">
+            <h5 id="cart-header__regular__count" class="fw-400">000</h5>
+            <!-- <div>
+              <h5 class="fw-400 cart-header__round-container__text flex-row">
+                3
+              </h5>
+            </div> -->
+          </div>
+        </div>
+        <!-- CART DETAILS -->
+        <div class="cart-container" id="cart"></div>
+      </section>
+    </main>
+  </body>
 </html>
