@@ -44,10 +44,12 @@ const createDummyData = (numberOfCategories, itemsPerCategory) => {
 // creating dummy data
 const CATEGORIES = createDummyData(12, 8);
 let CART = {};
+let GRAND_TOTAL = 0;
 
 const updateCartHTML = (newCart) => {
   let CART = newCart;
   let cartHTML = ``;
+  let cartTotal = 0;
   for (const key in CART) {
     cartHTML += `
     <div class="cart-container__item flex-col">
@@ -72,16 +74,21 @@ const updateCartHTML = (newCart) => {
       </div>
     </div>
     `;
+    cartTotal += CART[key].price;
   }
 
+  document.getElementById("cart-grandTotal").innerHTML = `Rs ${cartTotal}`;
   document.getElementById("cart").innerHTML = cartHTML;
 };
 
 const changeQuantity = (e, add) => {
   let item = e.id;
+  // debugger;
   let unitPrice = CART[item].price / CART[item].quantity;
   let quantity = CART[item].quantity;
-  if (!add && quantity - 1 < 0) {
+  if (!add && quantity - 1 <= 0) {
+    delete CART[item];
+    updateCartHTML(CART);
     return;
   }
   CART = {
