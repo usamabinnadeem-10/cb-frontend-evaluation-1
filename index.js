@@ -175,6 +175,27 @@ const categoryClickHandler = (e) => {
   generateMenu();
 };
 
+const openCategoriesHandler = (e) => {
+  let categoriesContainer = document.getElementById('categories-container').classList;
+  let current = document.getElementById('open-or-close');
+  let circle = document.getElementById('open-categories-div').classList;
+  if (categoriesContainer.contains('hidden')){
+    current.innerHTML = 'CLOSE';
+    categoriesContainer.remove('hidden');
+    categoriesContainer.add('visible-flex');
+    circle.add('open-categories-div--categories-open');
+  } else if (categoriesContainer.contains('visible-flex')){
+    current.innerHTML = 'MENU'
+    categoriesContainer.add('hidden');
+    categoriesContainer.remove('visible-flex');
+    circle.remove('open-categories-div--categories-open')
+  } else {
+    current.innerHTML = 'CLOSE';
+    categoriesContainer.add('visible-flex');
+    circle.add('open-categories-div--categories-open');
+  }
+}
+
 // create categories
 for (let i = 0; i < CATEGORIES.length; i++) {
   document.getElementById(
