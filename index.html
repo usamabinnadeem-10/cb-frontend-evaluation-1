@@ -33,8 +33,8 @@
     </header>
     <main class="flex-row">
       <!-- CATEGORIES -->
-      <aside class="categories-container flex-col">
-        <div class="categories-container__heading flex-row category">
+      <aside id="categories-container" class="categories-container flex-col">
+        <div class="categories-container__heading flex-row category pointer">
           <h4 class="fw-400">Categories</h4>
           <h4 id="category-count" class="fw-400"></h4>
         </div>
@@ -43,6 +43,9 @@
           id="category-map"
         ></div>
       </aside>
+      <div onClick="openCategoriesHandler(this)" id="open-categories-div">
+        <h3 id="open-or-close" class="fw-500">MENU</h3>
+      </div>
       <!-- MENU -->
       <section class="menu-container-parent">
         <input class="search fw-400" placeholder="Search Item" />
@@ -73,7 +76,17 @@
           </div>
         </div>
         <!-- CART DETAILS -->
-        <div class="cart-container" id="cart"></div>
+        <div class="container-details-wrapper">
+          <div class="cart-container" id="cart"></div>
+          <div class="cart-grandTotal flex-row">
+            <h4 class="fw-400">Grand Total</h4>
+            <h4 id="cart-grandTotal"></h4>
+          </div>
+          <div class="cart-actionButtons flex-row">
+            <button class="cart-actionButton fw-700 cart-actionButtons__cancel">Cancel</button>
+            <button class="cart-actionButton fw-700 cart-actionButtons__proceed">Proceed</button>
+          </div>
+        </div>
       </section>
     </main>
   </body>
